@@ -14,7 +14,7 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("Secret
 
 builder.Services.AddScoped<IMailNotificationProducer, MailNotificationProducer>();
 builder.Services.AddHostedService<MailNotificationConsumer>();
-builder.Services.AddFluentEmail("dgutierrez@student.neumont.edu").AddSmtpSender("smtp.sendgrid.net", 2525, "apikey", "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");
+builder.Services.AddFluentEmail("").AddSmtpSender("smtp.sendgrid.net", 2525, "apikey", ""); // Add email + key
 
 builder.Services.AddEntityFrameworkMySQL().AddDbContext<MailDBContext>(options => { options.UseMySQL(builder.Configuration.GetConnectionString("mySQL")); });
 
